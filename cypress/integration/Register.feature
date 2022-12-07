@@ -6,4 +6,4 @@ Feature: Register
         And type my Email address <email> and Password <pwd>
         And submit them
         Then I will be registred
-        And I will see in header: Welcome <firstPartOfEmailadress> !
+        And I will see on header: Welcome <firstPartOfEmailadress> !

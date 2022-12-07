@@ -7,10 +7,10 @@ class MyAccountPage {
 
     typeEmailAndPwdInTheRegisterArea() {
         const emailAdress = `testlgc${Math.floor(Math.random() * 10000)}@test.com`
-        data.email = emailAdress
+        data.registerEmailadress = emailAdress
 
-        cy.get(myAccountElements.iptEmail()).type(data.email, { force: true })
-        cy.get(myAccountElements.iptPwd()).type(data.password, { force: true })
+        cy.get(myAccountElements.iptRegisterEmail()).type(emailAdress, { force: true })
+        cy.get(myAccountElements.iptRegisterPwd()).type(data.password, { force: true })
     }
 
     submitRegister() {
@@ -18,10 +18,19 @@ class MyAccountPage {
     }
 
     headerMessageValidation() {
-        const firstPartOfEmail = data.email.split('@')[0]
+        const firstPartOfEmail = data.registerEmailadress.split('@')[0]
 
         cy.get(myAccountElements.lblWelcome())
-        .should('have.text', `Welcome ${firstPartOfEmail} !`)
+            .should('have.text', `Welcome ${firstPartOfEmail} !`)
+    }
+
+    doLogin() {
+        cy.clearCookies()
+        cy.login(data.email, data.password)
+    }
+
+    doUiLogin() {
+        cy.uiLogin(data.email, data.password)
     }
 }
 

@@ -21,6 +21,6 @@ Then(/^I will be registred$/, () => {
 	return true
 })
 
-And(/^I will see in header: Welcome <firstPartOfEmailadress> !$/, () => {
+And(/^I will see on header: Welcome <firstPartOfEmailadress> !$/, () => {
 	myAccountPage.headerMessageValidation()
 })
