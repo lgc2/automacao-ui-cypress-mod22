@@ -6,7 +6,7 @@ class HomePage {
 
     visitHomePage() {
         cy.clearCookies()
-        cy.visit('/')
+        cy.visit(Cypress.env('baseUrl'))
     }
 
     accessMyAccountPage() {

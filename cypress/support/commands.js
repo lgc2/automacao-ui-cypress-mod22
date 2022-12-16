@@ -12,7 +12,7 @@ Cypress.Commands.add('login', (user, pass) => {
     fd.append('login', 'Login')
 
     cy.request({
-        url: '/minha-conta/',
+        url: `${(Cypress.env('baseUrl'))}/minha-conta/`,
         method: 'POST',
         body: fd
     })
@@ -30,7 +30,7 @@ Cypress.Commands.add('login', (user, pass) => {
             })
         })
 
-    cy.visit('/minha-conta/')
+    cy.visit(`${(Cypress.env('baseUrl'))}/minha-conta/`)
 })
 
 Cypress.Commands.add('uiLogin', (user, pass) => {
@@ -54,11 +54,11 @@ Cypress.Commands.add('addProductToCartByEndpoint', (productName, size, color, qu
     fd.append('variation_id', variation_id)
 
     cy.request({
-        url: `/product/${productName}/`,
+        url: `${(Cypress.env('baseUrl'))}/product/${productName}/`,
         method: 'POST',
         body: fd
     }).then((response) => {
         expect(response.status).to.equal(200)
     })
-    cy.visit('/checkout/')
+    cy.visit(`${(Cypress.env('baseUrl'))}/checkout/`)
 })

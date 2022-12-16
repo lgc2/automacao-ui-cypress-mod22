@@ -10,7 +10,7 @@ class MyAccountPage {
         data.registerEmailadress = emailAdress
 
         cy.get(myAccountElements.iptRegisterEmail()).type(emailAdress, { force: true })
-        cy.get(myAccountElements.iptRegisterPwd()).type(data.password, { force: true })
+        cy.get(myAccountElements.iptRegisterPwd()).type(Cypress.env('password'), { force: true })
     }
 
     submitRegister() {
@@ -26,11 +26,16 @@ class MyAccountPage {
 
     doLogin() {
         cy.clearCookies()
-        cy.login(data.email, data.password)
+        cy.login(Cypress.env('email'), Cypress.env('password'))
     }
 
     doUiLogin() {
-        cy.uiLogin(data.email, data.password)
+        cy.uiLogin(Cypress.env('email'), Cypress.env('password'))
+    }
+
+    accessProductsPage() {
+        cy.get(myAccountElements.lblBuy()).click()
+        cy.url().should('equal', `${Cypress.env('baseUrl')}/produtos/`)
     }
 }
 

@@ -1,4 +1,17 @@
 {
-    "baseUrl": "http://lojaebac.ebaconline.art.br",
-    "testFiles": "**/*.feature"
+    "projectId": "_EBAC",
+    "env": {
+        "baseUrl": "http://lojaebac.ebaconline.art.br",
+        "email": "testslgc2@test.com",
+        "password": "GD*peToHNJ1#c$sgk08EaYJQoiaoas"
+    },
+    "testFiles": "**/*.feature",
+    "video": false,
+    "reporter": "mochawesome",
+    "reporterOptions": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+    }
 }
