@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cy:run": "npx cypress run",
     "test": "npx cypress run cypress run --reporter mochawesome --reporter-options reportDir=\"cypress/results\",overwrite=false,html=false,json=true && npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json",
     "clean-report:windows": "rd /s /q \"../automacao-ui-cypress-mod22/mochawesome-report\" \"../automacao-ui-cypress-mod22/cypress/results\" && del \"../automacao-ui-cypress-mod22/mochawesome.json\"",
     "sorry:cypress": "npx cy2 run --record --key EBAC --parallel --ci-build-id `date +%s`"
