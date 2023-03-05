@@ -6,13 +6,5 @@
         "password": "GD*peToHNJ1#c$sgk08EaYJQoiaoas"
     },
     "testFiles": "**/*.feature",
-    "video": false,
-    "reporter": "mochawesome",
-    "reporterOptions": {
-        "reportDir": "mochawesome-report",
-        "overwrite": false,
-        "reportFilename": "index.html",
-        "html": true,
-        "json": false
-    }
+    "video": false
 }

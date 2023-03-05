@@ -6,6 +6,9 @@
   "scripts": {
     "cy:run": "npx cypress run",
     "test": "npx cypress run cypress run --reporter mochawesome --reporter-options reportDir=\"cypress/results\",overwrite=false,html=false,json=true && npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json",
+    "test:allure": "npx cypress run --env allure=true && npm run allure:generate",
+    "allure:open": "npx allure serve",
+    "allure:generate": "npx allure generate allure-results --clean -o allure-report",
     "clean-report:windows": "rd /s /q \"../automacao-ui-cypress-mod22/mochawesome-report\" \"../automacao-ui-cypress-mod22/cypress/results\" && del \"../automacao-ui-cypress-mod22/mochawesome.json\"",
     "sorry:cypress": "npx cy2 run --record --key EBAC --parallel --ci-build-id `date +%s`"
   },
@@ -13,6 +16,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.19.5",
+    "allure-commandline": "^2.13.8",
+    "cy2": "^1.3.0",
     "cypress": "^9.5.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "mochawesome": "^7.1.3",
