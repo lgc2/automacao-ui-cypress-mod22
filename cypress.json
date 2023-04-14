@@ -1,4 +1,5 @@
 {
-    "baseUrl": "http://lojaebac.ebaconline.art.br",
-    "testFiles": "**/*.feature"
+  "baseUrl": "http://lojaebac.ebaconline.art.br",
+  "testFiles": "**/*.feature",
+  "projectId": "yehgar"
 }
